@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% extends "core/Base.html" %}
+<html lang="en">
+  
+<!-- Mirrored from www.bootstrapdash.com/demo/aquaui/template/demo_1/pages/samples/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jun 2021 12:21:45 GMT -->
+<head>
+
+  </head>
+  <body>
+{%block content%}
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Orders</h4>
+                    <div class="row grid-margin">
+                      <div class="col-12">
+                        <div class="alert alert-warning" role="alert">
+                          <strong>Heads up!</strong> This alert needs your attention, but it's not super important. </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="table-responsive">
+                          <table id="order-listing" class="table" cellspacing="0" width="100%">
+                            <thead>
+                              <tr class="bg-primary text-white">
+                                <th >No #</th>
+                                <th style="max-width: 100px;">Produits</th>
+                                <th>Shipping adresse</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for order,items in orders %}
+                              <tr>
+                                <td>{{order.getId}}</td>
+                                <td class="product-2" class="py-2" >
+                                <div class="row" >
+
+
+                                      {%for item in items%}
+                                    <img  src="{{item.image}}" alt="image" />
+                                      {%endfor%}
+                                </div>
+                                </td>
+                                <td class="adresse" style="min-width: 300px;">
+     
+                                {{order.shippingaddress}}
+                      
+                                </td>
+                                <td>{{order.totalPrice}} DH</td>
+                                <td>
+                                  <label class="badge badge-info">On hold</label>
+                                </td>
+                                <td class="text-right">
+                                  <button class="btn btn-light">
+                                    <i class="mdi mdi-eye text-primary"></i>vue </button>
+                                  <a href="delete/{{order.getIdO}}"><button class="btn btn-light">
+                                    <i class="mdi mdi-close text-danger"></i>Supprimer </button></a>
+                                </td>
+                              </tr>
+                            {% endfor %}
+
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+{%endblock content%}
+  </body>
+
+<!-- Mirrored from www.bootstrapdash.com/demo/aquaui/template/demo_1/pages/samples/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jun 2021 12:21:45 GMT -->
+</html>

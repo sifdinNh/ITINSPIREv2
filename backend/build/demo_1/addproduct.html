@@ -1,0 +1,130 @@
+{% extends "core/Base.html" %}
+{%load static%}
+<html lang="en">
+  
+<!-- Mirrored from www.bootstrapdash.com/demo/aquaui/template/demo_1/pages/samples/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jun 2021 12:21:42 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Aquaui Admin</title>
+    <!-- plugins:css -->
+  {%block link%}
+    <link rel="stylesheet" href='{% static "vendors/dropify/dropify.min.css"%}' />
+    <link rel="stylesheet" href='{% static "vendors/x-editable/bootstrap-editable.css"%}' />
+    <link rel="stylesheet" type="text/css" href='{% static "vendors/Semantic/semantic.min.css"%}'>
+    <link rel="stylesheet" href='{% static "vendors/jquery-tags-input/jquery.tagsinput.min.css"%}' />
+  {%endblock%}
+
+  </head>
+  <body>
+        {%block content%}
+            <nav aria-label="breadcrumb" role="navigation">
+              <ol class="breadcrumb breadcrumb-custom">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item">
+                  <a href="#">Library</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  <span>Data</span>
+                </li>
+              </ol>
+            </nav>
+            <h1 class="display-3">Add Product</h1>
+            <div class="row">
+              <div class="col-md-6  grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">informations sur le produit</h4>
+
+                    <form  class="ui form ">
+                      <div class="field">
+                        <label>Name</label>
+          
+                          <div class="field">
+                            <input type="text" name="shipping[first-name]" placeholder="First Name">
+                          </div>
+                     
+
+                      </div>
+                      <div class="form-group">
+                        <div class="field">
+                          <label>Description</label>
+                          <textarea rows="4"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field">
+                        <label>Catégorie</label>
+                        <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                          <option disabled selected>None</option>
+                          <option>United States of America</option>
+                          <option>United Kingdom</option>
+                          <option>India</option>
+                          <option>Germany</option>
+                          <option>Argentina</option>
+                        </select>
+                      </div>
+                      </div>
+                      
+
+        
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <h4 class="card-title d-flex"> product's image
+                      </h4>
+                      <input type="file" data-default-file="../../images/add-image.png" class="dropify" />
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Prix</label>
+
+                        <div class="ui right labeled input focus">
+                          
+                          <input type="text"  placeholder="0.00" id="amount " >
+                          <label for="amount" class="ui label">$</label>
+                        </div>
+                      </div>
+
+
+                      <button type="button" class="btn btn-info btn-icon-text mr-2"><i class="mdi mdi-file-check btn-icon-prepend"></i> Save </i></button>
+                        <button type="button" class="btn btn-warning btn-icon-text"><i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
+
+            
+                      </form>
+
+                   
+              
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+    {%endblock content%}
+    {%block script%}
+    <script src='{% static "vendors/dropify/dropify.min.js"%}'></script>
+    <script src='{% static "vendors/x-editable/bootstrap-editable.min.js"%}'></script>
+    <script src='{% static "js/x-editable.js"%}'></script>
+    <script src='{% static "vendors/Semantic/semantic.min.js"%}'></script>
+    <script src='{% static "js/inputmask.js"%}'></script>
+    <script src='{% static "vendors/inputmask/jquery.inputmask.bundle.js"%}'></script>
+    <script src='{% static "vendors/jquery-tags-input/jquery.tagsinput.min.js"%}'></script>
+
+    <script src='{% static "js/form-addons.js"%}'></script>
+        <script src='{% static "js/dropify.js"%}'></script>
+    {%endblock%}
+
+
+
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+  </body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% extends "core/Base.html" %}
+
+<html lang="en">
+  
+<head>
+
+    
+
+
+  </head>
+  <body>
+          {%block content%}
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Data table</h4>
+                <div class="row">
+                  <div class="col-12">
+                    <a href="{% url 'addProduct'%}"><button type="button" class="float-right mb-2 btn btn-outline-info btn-icon-text"><i class="fa fa-plus mr-2"></i>ajouter un produit </button></a>
+                    <div class="table-responsive">
+                      <table id="order-listing" class="table">
+                        <thead>
+                          <tr class="bg-info text-white">
+                            <th></th>
+                            <th>No #</th>
+                            <th>Produit</th> 
+                            <th >Nom de Produit</th>
+                            <th>Prix</th>
+                            <th>Catégorie</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        {%for product in products%}
+                          <tr>
+                            <td>
+                              <div class="form-check mt-0"><label class="form-check-label"><input type="checkbox" class="form-check-input"><i class="input-helper"></i></label></div>
+                            </td>
+                            <td>{{product.getId}}</td>
+                            <td class="product" class="py-2">
+                              <img  src="http://localhost:8000/media/{{product.image}}" alt="image" />
+                            </td>
+                            <td ><a href="http://localhost:8000/admin/base/product/{{product.getId}}/change/">{{product.name}}</a></td>
+
+                            <td>{{product.price}}</td>
+                            <td>
+                              <div class="row">
+                                <div class="col-12">
+                                  <label class="badge badge-warning badge-pill">{{product.category}}</label>
+                                </div>
+                   
+                                </div>
+                            </td>
+
+                            <td>
+                              <label class="badge badge-acitve">active</label>
+                            </td>
+                            <td>
+                              <a href="http://localhost:8000/admin/base/product/{{product.getId}}/change/"><button type="button" class= "btn-lg btn btn-success btn-icon-text">
+                                <i class="mdi mdi-file-check btn-icon-prepend"></i> modifier </button></a>
+                                <a href="delete/{{product.getId}}"><button type="button" class= "btn btn-lg btn-danger"><i class="mdi mdi-delete"></i></button></a>
+                            </td>
+                          </tr>
+                          {%endfor%}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  {%endblock content%}
+
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+  </body>
+
+<!-- Mirrored from www.bootstrapdash.com/demo/aquaui/template/demo_1/pages/samples/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jun 2021 12:21:42 GMT -->
+</html>
